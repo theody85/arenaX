@@ -19,10 +19,7 @@ abstract contract AXMarketPlace is ERC1155 {
 	Asset[] public assets;
 
 	mapping(uint256 => address) public creators;
-
-	// Mapping from asset ID to its supply
 	mapping(uint256 => uint256) public assetSupply;
-
 	mapping(uint256 => address[]) owners;
 
 	event AssetMinted(
@@ -118,6 +115,7 @@ abstract contract AXMarketPlace is ERC1155 {
 		emit AssetMinted(_assetId, 1, _to);
 	}
 
+	//Function to buy assets
 	function buyAsset(
 		uint256 _assetId,
 		uint256 _quantity
@@ -183,18 +181,21 @@ abstract contract AXMarketPlace is ERC1155 {
 		require(sent, "Failed to send Ether");
 	}
 
-	function getAssetsLeft(
+	//Function to retrieve assets supply
+	function getAssetSupply(
 		uint256 _id
 	) external view validID(_id) returns (uint256) {
 		return assetSupply[_id];
 	}
 
+	//Function to retrieve all owners
 	function getOwners(
 		uint256 _id
 	) external view validID(_id) returns (address[] memory) {
 		return owners[_id];
 	}
 
+	//Fucntion to retrieve all assets
 	function getAllAssets() external view returns (Asset[] memory) {
 		return assets;
 	}
