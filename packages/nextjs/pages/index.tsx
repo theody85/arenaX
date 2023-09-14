@@ -4,12 +4,59 @@ import { MetaHeader } from "~~/components/MetaHeader";
 import hero1 from "~~/public/assets/hero-1.png";
 import hero2 from "~~/public/assets/hero-2.png";
 import hero3 from "~~/public/assets/hero-3.png";
+import shoe from "~~/public/assets/photo-1606107557195-0e29a4b5b4aa.jpg";
+
+const categories = [
+  {
+    imageUrl: shoe,
+    name: "Real Estate",
+    alt: "real-estate",
+  },
+  {
+    imageUrl: shoe,
+    name: "Art",
+    alt: "art",
+  },
+  {
+    imageUrl: shoe,
+    name: "Furniture",
+    alt: "furniture",
+  },
+  {
+    imageUrl: shoe,
+    name: "Shoe",
+    alt: "others",
+  },
+] as const;
+
+const NFT101 = [
+  {
+    title: "What is an NFT?",
+    imageUrl: shoe,
+    url: "/",
+  },
+  {
+    title: "How to buy an NFT",
+    imageUrl: shoe,
+    url: "/",
+  },
+  {
+    title: "What is minting?",
+    imageUrl: shoe,
+    url: "/",
+  },
+  {
+    title: "How to stay protected in web3",
+    imageUrl: shoe,
+    url: "/",
+  },
+] as const;
 
 const Home: NextPage = () => {
   return (
     <>
       <MetaHeader />
-      <div className="flex items-center flex-col flex-grow pt-10 h-screen">
+      <div className="flex items-center flex-col flex-grow pt-10">
         <div className="flex w-full justify-between relative">
           <div className="flex flex-col gap-y-4">
             <div className="font-michroma text-white text-7xl lg:w-2/3nline-flex lg:leading-normal">
@@ -46,8 +93,72 @@ const Home: NextPage = () => {
           </button>
         </div>
       </div>
+
+      <section className="flex flex-col flex-grow py-[35vh] bg-transparent gap-y-28">
+        <div>
+          <h1 className="font-michroma text-3xl mb-12 text-white">Explore Categories</h1>
+          {
+            <div className="flex flex-col lg:flex-row gap-x-8 gap-y-8">
+              {categories.map((category, idx) => (
+                <div className="card card-compact w-96 bg-transparent shadow-xl border-2 border-[#23CEFD]" key={idx}>
+                  <figure>
+                    <Image
+                      src={category.imageUrl}
+                      alt={category.alt}
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title text-white text-2xl mt-4">{category.name}</h2>
+                  </div>
+                </div>
+              ))}
+            </div>
+          }
+        </div>
+
+        <div>
+          <div className="flex items-center justify-between  mb-12">
+            <h1 className="font-michroma text-3xl text-white">NFT 101</h1>
+            <button className="gradient-bg font-michroma uppercase text-xl px-12 py-4 text-white border border-[#23CEFD] rounded-xl">
+              learn more
+            </button>
+          </div>
+          {
+            <div className="flex flex-col lg:flex-row gap-x-8 gap-y-8">
+              {NFT101.map((category, idx) => (
+                <div className="card card-compact w-96 bg-transparent shadow-xl border-2 border-[#23CEFD]" key={idx}>
+                  <figure>
+                    <Image
+                      src={category.imageUrl}
+                      alt={category.title}
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title text-white text-2xl mt-4">{category.title}</h2>
+                  </div>
+                </div>
+              ))}
+            </div>
+          }
+        </div>
+      </section>
     </>
   );
 };
 
 export default Home;
+
+// Categories are Real Estate, Art, Furniture and Others
+
+{
+  /* <div className="card card-compact w-96 bg-transparent shadow-xl border-2 border-[#23CEFD]">
+<figure>
+  <Image src={shoe} alt="Shoes" />
+</figure>
+<div className="card-body">
+  <h2 className="card-title">Shoes!</h2>
+</div>
+</div> */
+}
