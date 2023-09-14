@@ -48,6 +48,7 @@ const Category = () => {
     <div className="w-full">
       <div className="w-full bg-indigo-950/80 rounded-2xl px-8 py-8">
         <Fade>
+          <h1 className="text-5xl text-white font-bold mb-12">Trending</h1>
           <div className="flex flex-nowrap items-center justify-between h-full flex-1 gap-x-6">
             {topSellers.map((seller, index) => (
               <div className="card bg-[#040636] shadow-xl w-full border-2 border-[#23CEFD] cursor-pointer" key={index}>
@@ -70,7 +71,7 @@ const Category = () => {
                         {seller.name === "Ante" && <Image src={ellipse} alt="ellipse" className="z-10 -ml-6" />}
                       </div>
                       <button className="gradient-bg text-sm px-3 py-1 text-white border border-[#23CEFD] rounded-xl">
-                        Place a bid
+                        Buy
                       </button>
                     </div>
                   </div>
