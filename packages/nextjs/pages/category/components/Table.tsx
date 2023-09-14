@@ -28,9 +28,52 @@ const CollectionData = [
     items: 11,
     owners: 4.5,
   },
+  {
+    collection: {
+      id: 1,
+      name: "OtterHead",
+      imageUrl: dummy,
+    },
+    floorPrice: 0.0,
+    floorChange: 0.0,
+    volume: 0,
+    volumeChange: 0.0,
+    items: 11,
+    owners: 4.5,
+  },
+  {
+    collection: {
+      id: 1,
+      name: "OtterHead",
+      imageUrl: dummy,
+    },
+    floorPrice: 0.0,
+    floorChange: 0.0,
+    volume: 0,
+    volumeChange: 0.0,
+    items: 11,
+    owners: 4.5,
+  },
+  {
+    collection: {
+      id: 1,
+      name: "OtterHead",
+      imageUrl: dummy,
+    },
+    floorPrice: 0.0,
+    floorChange: 0.0,
+    volume: 0,
+    volumeChange: 0.0,
+    items: 11,
+    owners: 4.5,
+  },
 ];
 
 const columns: ColumnDef<(typeof CollectionData)[0]>[] = [
+  {
+    header: "#",
+    enableSorting: false,
+  },
   {
     header: "COLLECTION",
     enableSorting: false,
@@ -148,6 +191,13 @@ const Table = () => {
           <tr></tr>
         </tfoot>
       </table>
+      <div className="flex items-center justify-end space-x-2 py-4">
+        <div className="join">
+          <button className="join-item btn">«</button>
+          <button className="join-item btn">Page 1</button>
+          <button className="join-item btn">»</button>
+        </div>
+      </div>
     </div>
   );
 };
