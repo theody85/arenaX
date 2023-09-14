@@ -3653,6 +3653,7 @@ __metadata:
     "@ethersproject/providers": ~5.7.2
     "@heroicons/react": ~2.0.11
     "@rainbow-me/rainbowkit": 1.0.8
+    "@tanstack/react-table": ^8.9.9
     "@trivago/prettier-plugin-sort-imports": ~4.1.1
     "@types/node": ~17.0.45
     "@types/react": ~18.0.21
@@ -4069,6 +4070,25 @@ __metadata:
     react-native:
       optional: true
   checksum: 4d7e4e6a8466095848d2924fdbcd2d22a36b53e2d0f79a7dec121c8d7af36ff857b1bae5a7b802f3a399922c9c9f38f2a06372b1fc7b1d5de960e78fa1d3d722
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-table@npm:^8.9.9":
+  version: 8.9.9
+  resolution: "@tanstack/react-table@npm:8.9.9"
+  dependencies:
+    "@tanstack/table-core": 8.9.9
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: eb7b285d8fca68888b48e1ed7889085f1a88597a0f18cfc035d4f4ee60750170a59ddfd5ac1b2145a13b0fceff22216dea36c767d3813d63ada882701b391a09
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.9.9":
+  version: 8.9.9
+  resolution: "@tanstack/table-core@npm:8.9.9"
+  checksum: 2103488d8aba634061738388911c1fba0d0729c083a1c30c50e0352e0c882b0d825eccd15165abd0f5184f945cf6d727bd18936e438e635eacc2f03b0e9c42e7
   languageName: node
   linkType: hard
 

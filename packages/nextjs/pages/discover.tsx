@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
-import { ContractData } from "~~/components/discover/ContractData";
-import { ContractInteraction } from "~~/components/discover/ContractInteraction";
+import { ContractData } from "~~/components/create/ContractData";
+
+// import { ContractInteraction } from "~~/components/create/CreateForm";
 
 const ExampleUI: NextPage = () => {
   return (
@@ -12,7 +13,7 @@ const ExampleUI: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet" />
       </MetaHeader>
       <div className="grid lg:grid-cols-2 flex-grow" data-theme="exampleUi">
-        <ContractInteraction />
+        {/* <ContractInteraction /> */}
         <ContractData />
       </div>
     </>

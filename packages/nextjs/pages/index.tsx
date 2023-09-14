@@ -104,7 +104,10 @@ const Home: NextPage = () => {
             <button className="gradient-bg font-michroma uppercase text-xl px-12 py-4 text-white border border-[#23CEFD] rounded-xl">
               discover
             </button>
-            <button className="font-michroma uppercase text-xl px-12 py-4 bg-transparent text-white border border-[#23CEFD] rounded-xl">
+            <button
+              className="font-michroma uppercase text-xl px-12 py-4 bg-transparent text-white border border-[#23CEFD] rounded-xl"
+              onClick={() => router.push("/create")}
+            >
               create
             </button>
           </div>
