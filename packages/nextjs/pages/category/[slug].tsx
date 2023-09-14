@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Table from "./components/Table";
 // import { useRouter } from "next/router";
 import Fade from "react-reveal/Fade";
 import ante from "~~/public/assets/ante.png";
@@ -78,6 +79,10 @@ const Category = () => {
             ))}
           </div>
         </Fade>
+      </div>
+
+      <div className="w-full py-[20vh]">
+        <Table />
       </div>
     </div>
   );
