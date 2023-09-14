@@ -17,7 +17,6 @@ describe("AXMarketPlace", function () {
 
     AXMarketPlace = await ethers.getContractFactory("AXMarketPlaceTestable");
     axMarketPlace = await AXMarketPlace.deploy();
-    // await axMarketPlace.deployed();
   });
 
   describe("mintAsset", function () {
@@ -167,7 +166,7 @@ describe("AXMarketPlace", function () {
       it("should buy a shared asset", async function () {
         const assetId = 1;
         const quantity = 5;
-        const assetPrice = ethers.utils.parseEther("1"); // Price per token
+        const assetPrice = ethers.utils.parseEther("1");
         //@ts-ignore
         const totalCost: bigint = BigInt(assetPrice) * BigInt(quantity);
 
@@ -344,32 +343,30 @@ describe("AXMarketPlace", function () {
     describe("getAssetsSupply", function () {
       it("should return the correct asset supply", async function () {
         const assetId = 1;
-        const totalSupply = 10; // Set the total supply for the asset
+        const totalSupply = 10;
 
-        // Mint an asset with the specified total supply
-        await axMarketPlace.connect(owner).mintAsset(
-          "Test Asset",
-          "A test asset for supply testing",
-          "Test",
-          totalSupply,
-          18, // Decimals
-          ethers.utils.parseEther("1"), // Price per token
-          true, // isShared
-          true, // isApproved
-        );
+        await axMarketPlace
+          .connect(owner)
+          .mintAsset(
+            "Test Asset",
+            "A test asset for supply testing",
+            "Test",
+            totalSupply,
+            18,
+            ethers.utils.parseEther("1"),
+            true,
+            true,
+          );
 
-        // Call getAssetSupply to retrieve the asset supply
         const assetSupply = await axMarketPlace.getAssetSupply(assetId);
 
-        // Check that the returned supply matches the expected total supply
         expect(assetSupply).to.equal(totalSupply);
       });
 
       it("should revert if assetId provided is invalid", async function () {
         const assetId = 0;
-        const totalSupply = 10; // Set the total supply for the asset
+        const totalSupply = 10;
 
-        // Mint an asset with the specified total supply
         await axMarketPlace.connect(owner).mintAsset(
           "Test Asset",
           "A test asset for supply testing",
@@ -389,21 +386,21 @@ describe("AXMarketPlace", function () {
     describe("getOwners", function () {
       it("should revert if assetId provided is invalid", async function () {
         const assetId = 0;
-        const totalSupply = 10; // Set the total supply for the asset
+        const totalSupply = 10;
 
-        // Mint an asset with the specified total supply
-        await axMarketPlace.connect(owner).mintAsset(
-          "Test Asset",
-          "A test asset for supply testing",
-          "Test",
-          totalSupply,
-          18, // Decimals
-          ethers.utils.parseEther("1"), // Price per token
-          true, // isShared
-          true, // isApproved
-        );
+        await axMarketPlace
+          .connect(owner)
+          .mintAsset(
+            "Test Asset",
+            "A test asset for supply testing",
+            "Test",
+            totalSupply,
+            18,
+            ethers.utils.parseEther("1"),
+            true,
+            true,
+          );
 
-        // Check that the returned supply matches the expected total supply
         await expect(axMarketPlace.getOwners(assetId)).to.be.revertedWith("Invalid asset ID");
       });
     });
