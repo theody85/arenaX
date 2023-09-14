@@ -5,33 +5,40 @@ import Fade from "react-reveal/Fade";
 import Jump from "react-reveal/Jump";
 import Slide from "react-reveal/Slide";
 import { MetaHeader } from "~~/components/MetaHeader";
+import art from "~~/public/assets/art.webp";
+import furniture from "~~/public/assets/furniture.png";
 import hero1 from "~~/public/assets/hero-1.png";
 import hero2 from "~~/public/assets/hero-2.png";
 import hero3 from "~~/public/assets/hero-3.png";
-import shoe from "~~/public/assets/photo-1606107557195-0e29a4b5b4aa.jpg";
+import nft1 from "~~/public/assets/nft1.png";
+import nft2 from "~~/public/assets/nft2.png";
+import nft3 from "~~/public/assets/nft3.png";
+import nft4 from "~~/public/assets/nft4.png";
+import others from "~~/public/assets/others.webp";
+import real from "~~/public/assets/real.png";
 
 const categories = [
   {
-    imageUrl: shoe,
+    imageUrl: real,
     name: "Real Estate",
     alt: "real-estate",
     url: "/category/real-estate",
   },
   {
-    imageUrl: shoe,
+    imageUrl: art,
     name: "Art",
     alt: "art",
     url: "/category/art",
   },
   {
-    imageUrl: shoe,
+    imageUrl: furniture,
     name: "Furniture",
     alt: "furniture",
     url: "/category/furniture",
   },
   {
-    imageUrl: shoe,
-    name: "Shoe",
+    imageUrl: others,
+    name: "Othes",
     alt: "others",
     url: "/category/others",
   },
@@ -40,22 +47,22 @@ const categories = [
 const NFT101 = [
   {
     title: "What is an NFT?",
-    imageUrl: shoe,
+    imageUrl: nft1,
     url: "/",
   },
   {
     title: "How to buy an NFT",
-    imageUrl: shoe,
+    imageUrl: nft2,
     url: "/",
   },
   {
     title: "What is minting?",
-    imageUrl: shoe,
+    imageUrl: nft3,
     url: "/",
   },
   {
     title: "How to stay protected in web3",
-    imageUrl: shoe,
+    imageUrl: nft4,
     url: "/",
   },
 ] as const;
