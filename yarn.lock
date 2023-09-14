@@ -3678,6 +3678,7 @@ __metadata:
     react-dom: ~18.2.0
     react-fast-marquee: ~1.3.5
     react-hot-toast: ~2.4.0
+    react-reveal: ^1.2.2
     tailwindcss: latest
     typescript: ~5.1.6
     use-debounce: ~8.0.4
@@ -15535,6 +15536,17 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 01b0f65542a4c8803ee748b4e6cf2adad66d034e15fb72e8455773b0d7b178ec806b3194d74f412db7064670c45552cc666c04e9fb3b5d466dce5fb48e634825
+  languageName: node
+  linkType: hard
+
+"react-reveal@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "react-reveal@npm:1.2.2"
+  dependencies:
+    prop-types: ^15.5.10
+  peerDependencies:
+    react: ^15.3.0 || ^16.0.0
+  checksum: c15f62ed8bee3be2e51f2e5a902dea830dea9eee9dad6e860eaf83793b94e99dcba8f124332e0f4642bae4e93bf5d83af6418699c2849da023428c36c67535d4
   languageName: node
   linkType: hard
 

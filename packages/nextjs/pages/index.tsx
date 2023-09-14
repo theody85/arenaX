@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import Fade from "react-reveal/Fade";
 import Jump from "react-reveal/Jump";
@@ -14,21 +15,25 @@ const categories = [
     imageUrl: shoe,
     name: "Real Estate",
     alt: "real-estate",
+    url: "/category/real-estate",
   },
   {
     imageUrl: shoe,
     name: "Art",
     alt: "art",
+    url: "/category/art",
   },
   {
     imageUrl: shoe,
     name: "Furniture",
     alt: "furniture",
+    url: "/category/furniture",
   },
   {
     imageUrl: shoe,
     name: "Shoe",
     alt: "others",
+    url: "/category/others",
   },
 ] as const;
 
@@ -56,6 +61,7 @@ const NFT101 = [
 ] as const;
 
 const Home: NextPage = () => {
+  const router = useRouter();
   return (
     <>
       <MetaHeader />
@@ -114,7 +120,11 @@ const Home: NextPage = () => {
             <div className="flex flex-col lg:flex-row gap-x-8 gap-y-8">
               {categories.map((category, idx) => (
                 <Fade key={idx}>
-                  <div className="card card-compact w-96 bg-transparent shadow-xl border-2 border-[#23CEFD]" key={idx}>
+                  <div
+                    className="card card-compact w-96 bg-transparent shadow-xl border-2 border-[#23CEFD] cursor-pointer"
+                    key={idx}
+                    onClick={() => router.push(category.url)}
+                  >
                     <figure>
                       <Image
                         src={category.imageUrl}
