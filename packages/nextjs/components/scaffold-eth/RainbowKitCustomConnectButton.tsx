@@ -41,7 +41,7 @@ export const RainbowKitCustomConnectButton = () => {
               if (!connected) {
                 return (
                   <button
-                    className="rounded-3xl font-bold font-inter gradient-bg text-white py-4 px-8"
+                    className="rounded-3xl font-bold font-inter gradient-bg text-white py-4 px-8 border border-[#23CEFD]"
                     onClick={openConnectModal}
                     type="button"
                   >
@@ -106,7 +106,7 @@ export const RainbowKitCustomConnectButton = () => {
                     </label>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu z-[2] p-2 mt-2 shadow-center shadow-accent bg-base-200 rounded-box gap-1"
+                      className="dropdown-content menu z-[999] p-2 mt-2 shadow-center shadow-accent bg-base-200 rounded-box gap-1"
                     >
                       <li>
                         {addressCopied ? (

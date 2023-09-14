@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 
             <h3 className="text-white text-2xl font-semibold tracking-wide">AND DISCOVER RARE DIGITAL ITEMS</h3>
           </div>
-          <div className="w-full">
+          <div className="w-full mr-28 relative">
             <Image src={hero1} alt="hero" className="absolute top-0 right-0 z-50" width={300} height={300} />
             <Image src={hero2} className="absolute -top-6 right-24 z-40" alt="hero" width={300} height={300} />
             <Image src={hero3} className="absolute -top-11 right-52 z-30" alt="hero" width={300} height={300} />
