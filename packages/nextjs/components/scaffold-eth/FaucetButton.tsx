@@ -1,8 +1,9 @@
 import { useState } from "react";
+import Image from "next/image";
+import walletIcon from "../../public/assets/wallet.svg";
 import { createWalletClient, http, parseEther } from "viem";
 import { useAccount, useNetwork } from "wagmi";
 import { hardhat } from "wagmi/chains";
-import { BanknotesIcon } from "@heroicons/react/24/outline";
 import { useAccountBalance, useTransactor } from "~~/hooks/scaffold-eth";
 
 // Number of ETH faucet sends to an address
@@ -57,9 +58,13 @@ export const FaucetButton = () => {
       }
       data-tip="Grab funds from faucet"
     >
-      <button className="btn btn-secondary btn-sm px-2 rounded-full" onClick={sendETH} disabled={loading}>
+      <button
+        className="gradient-bg px-3 py-3 rounded-full border border-[#23CEFD]"
+        onClick={sendETH}
+        disabled={loading}
+      >
         {!loading ? (
-          <BanknotesIcon className="h-4 w-4" />
+          <Image src={walletIcon} className="h-8 w-8" alt="wallet icon" />
         ) : (
           <span className="loading loading-spinner loading-xs"></span>
         )}

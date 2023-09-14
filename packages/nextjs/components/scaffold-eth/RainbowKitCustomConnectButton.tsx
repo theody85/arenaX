@@ -13,7 +13,7 @@ import {
   QrCodeIcon,
 } from "@heroicons/react/24/outline";
 import { Address, Balance, BlockieAvatar } from "~~/components/scaffold-eth";
-import { useAutoConnect, useNetworkColor } from "~~/hooks/scaffold-eth";
+import { useAutoConnect } from "~~/hooks/scaffold-eth";
 import { getBlockExplorerAddressLink, getTargetNetwork } from "~~/utils/scaffold-eth";
 
 /**
@@ -21,7 +21,7 @@ import { getBlockExplorerAddressLink, getTargetNetwork } from "~~/utils/scaffold
  */
 export const RainbowKitCustomConnectButton = () => {
   useAutoConnect();
-  const networkColor = useNetworkColor();
+
   const configuredNetwork = getTargetNetwork();
   const { disconnect } = useDisconnect();
   const { switchNetwork } = useSwitchNetwork();
@@ -40,7 +40,11 @@ export const RainbowKitCustomConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button className="btn btn-primary btn-sm" onClick={openConnectModal} type="button">
+                  <button
+                    className="rounded-3xl font-bold font-inter gradient-bg text-white py-4 px-8 border border-[#23CEFD]"
+                    onClick={openConnectModal}
+                    type="button"
+                  >
                     Connect Wallet
                   </button>
                 );
@@ -65,7 +69,7 @@ export const RainbowKitCustomConnectButton = () => {
                         >
                           <ArrowsRightLeftIcon className="h-6 w-4 ml-2 sm:ml-0" />
                           <span className="whitespace-nowrap">
-                            Switch to <span style={{ color: networkColor }}>{configuredNetwork.name}</span>
+                            Switch to <span style={{ color: "#fff" }}>{configuredNetwork.name}</span>
                           </span>
                         </button>
                       </li>
@@ -86,23 +90,23 @@ export const RainbowKitCustomConnectButton = () => {
               return (
                 <div className="px-2 flex justify-end items-center">
                   <div className="flex flex-col items-center mr-1">
-                    <Balance address={account.address} className="min-h-0 h-auto" />
-                    <span className="text-xs" style={{ color: networkColor }}>
+                    <Balance address={account.address} className="min-h-0 h-auto text-white text-lg font-bold" />
+                    <span className="text-sm" style={{ color: "#fff" }}>
                       {chain.name}
                     </span>
                   </div>
                   <div className="dropdown dropdown-end leading-3">
                     <label
                       tabIndex={0}
-                      className="btn btn-secondary btn-sm pl-0 pr-2 shadow-md dropdown-toggle gap-0 !h-auto"
+                      className="btn gradient-bg px-2 shadow-md dropdown-toggle gap-0 !h-auto border border-[#23CEFD]"
                     >
                       <BlockieAvatar address={account.address} size={24} ensImage={account.ensAvatar} />
-                      <span className="ml-2 mr-1">{account.displayName}</span>
-                      <ChevronDownIcon className="h-6 w-4 ml-2 sm:ml-0" />
+                      <span className="ml-2 mr-1 text-white">{account.displayName}</span>
+                      <ChevronDownIcon className="h-6 w-4 ml-2 sm:ml-0 text-white" />
                     </label>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu z-[2] p-2 mt-2 shadow-center shadow-accent bg-base-200 rounded-box gap-1"
+                      className="dropdown-content menu z-[999] p-2 mt-2 shadow-center shadow-accent bg-base-200 rounded-box gap-1"
                     >
                       <li>
                         {addressCopied ? (

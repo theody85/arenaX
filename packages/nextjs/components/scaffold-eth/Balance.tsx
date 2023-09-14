@@ -40,8 +40,8 @@ export const Balance = ({ address, className = "" }: TBalanceProps) => {
       <div className="w-full flex items-center justify-center">
         {isEthBalance ? (
           <>
-            <span>{balance?.toFixed(4)}</span>
-            <span className="text-[0.8em] font-bold ml-1">{configuredNetwork.nativeCurrency.symbol}</span>
+            <span className=" text-white text-lg font-bold">{balance?.toFixed(4)}</span>
+            <span className="text-lg font-bold ml-1">{configuredNetwork.nativeCurrency.symbol}</span>
           </>
         ) : (
           <>
